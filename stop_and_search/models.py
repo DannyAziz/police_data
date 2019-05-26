@@ -19,16 +19,9 @@ class StopAndSearch(models.Model):
     outcome = models.TextField(blank=True, null=True)
     outcome_linked_to_object_of_search = models.TextField(blank=True, null=True)
     removal_of_more_than_outer_clothing = models.TextField(blank=True, null=True)
+    latitude = models.TextField(blank=True, null=True)
+    longitude = models.TextField(blank=True, null=True)
+    street_text = models.TextField(blank=True, null=True)
 
     def __str__(self):
         return "Stop and Search - {force}, {type}".format(force=self.force, type=self.type)
-
-
-class StopAndSearchLocation(models.Model):
-    stop_and_search = models.OneToOneField(StopAndSearch, related_name="location")
-    latitude = models.TextField()
-    longitude = models.TextField()
-    street_text = models.TextField()
-
-    def __str__(self):
-        return "Stop and Search {id} - Location".format(id=self.stop_and_search.id)

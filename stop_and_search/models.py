@@ -6,7 +6,6 @@ from django.db import models
 class StopAndSearch(models.Model):
     force = models.TextField(blank=True, null=True)
     type = models.TextField(blank=True, null=True)
-    involved_person = models.BooleanField(default=True)
     datetime = models.DateTimeField(blank=True, null=True)
     operation = models.BooleanField(default=False)
     operation_name = models.TextField(blank=True, null=True)
@@ -21,7 +20,6 @@ class StopAndSearch(models.Model):
     removal_of_more_than_outer_clothing = models.TextField(blank=True, null=True)
     latitude = models.TextField(blank=True, null=True)
     longitude = models.TextField(blank=True, null=True)
-    street_text = models.TextField(blank=True, null=True)
 
     def __str__(self):
         return "Stop and Search - {force}, {type}".format(force=self.force, type=self.type)

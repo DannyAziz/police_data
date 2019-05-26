@@ -1,3 +1,6 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import StopAndSearch, StopAndSearchLocation
+
+admin.site.register(StopAndSearch)
+admin.site.register(StopAndSearchLocation)
